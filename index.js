@@ -88,6 +88,26 @@ app.get('/test', (request, response) => {
     response.end('<h3>The End.</h3>');
 })
 
+// return 10 favorite locations
+var joeFavoritePlaces = {
+	1: "test",
+	2: "test",
+	3: "test",
+	4: "test",
+	5: "test",
+	6: "test",
+	7: "test",
+	8: "test",
+	9: "test",
+	10: "test"
+}
+
+app.get('/joefavoriteplaces', (request, response) => {
+	console.log('Calling "/joefavoriteplaces" on the Node.js server.')
+	response.type('application/json')
+	response.send(JSON.stringify(joeFavoritePlaces, null, 4))
+})
+
 // Return Batman as JSON.
 var spiderMan = {
 	"firstName":"Bruce",
